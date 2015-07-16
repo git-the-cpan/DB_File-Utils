@@ -34,6 +34,13 @@
             "strict" : "0",
             "warnings" : "0"
          }
+      },
+      "test" : {
+         "requires" : {
+            "App::Cmd::Tester" : "0",
+            "File::Temp" : "0",
+            "Test::More" : "0"
+         }
       }
    },
    "release_status" : "stable",
@@ -44,6 +51,6 @@
          "web" : "https://github.com/ambs/DB_File-Utils"
       }
    },
-   "version" : "0.002"
+   "version" : "0.003"
 }
 

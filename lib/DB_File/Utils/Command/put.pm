@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::put;
-$DB_File::Utils::Command::put::VERSION = '0.002';
+$DB_File::Utils::Command::put::VERSION = '0.003';
 use v5.20;
 use DB_File::Utils -command;
 use strict;
@@ -42,15 +42,15 @@ sub execute {
 		$contents = <STDIN>;
 	}
 
-	_store($file, $key, $contents, $opt);
+	_store($self, $file, $key, $contents, $opt);
 }
 
 sub _store {
-	my ($file, $key, $value, $opt) = @_;
-	my %hash;
-	tie %hash,  'DB_File', $file, O_RDWR, '0666', $DB_BTREE;
-	$hash{$key} = $opt->{utf8} ? encode('utf-8', $value) : $value;
-	untie %hash;
+	my ($self, $filename, $key, $value, $opt) = @_;
+	my $hash = $self->app->do_tie( $filename, $opt);
+
+	$hash->{$key} = $opt->{utf8} ? encode('utf-8', $value) : $value;
+	untie $hash;
 }
 
 1;

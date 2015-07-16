@@ -27,19 +27,27 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.002",
+  "TEST_REQUIRES" => {
+    "App::Cmd::Tester" => 0,
+    "File::Temp" => 0,
+    "Test::More" => 0
+  },
+  "VERSION" => "0.003",
   "test" => {
-    "TESTS" => ""
+    "TESTS" => "t/*.t"
   }
 );
 
 
 my %FallbackPrereqs = (
   "App::Cmd::Setup" => 0,
+  "App::Cmd::Tester" => 0,
   "DB_File" => 0,
   "Encode" => 0,
   "ExtUtils::MakeMaker" => 0,
   "Fcntl" => 0,
+  "File::Temp" => 0,
+  "Test::More" => 0,
   "strict" => 0,
   "warnings" => 0
 );

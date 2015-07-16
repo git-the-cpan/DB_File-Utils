@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::get;
-$DB_File::Utils::Command::get::VERSION = '0.002';
+$DB_File::Utils::Command::get::VERSION = '0.003';
 use v5.20;
 use DB_File::Utils -command;
 use strict;
@@ -34,19 +34,20 @@ sub execute {
 
 	binmode STDOUT, ":utf8" if $opt->{utf8};
 
-	_retrieve($file, $key, $opt);
+	_retrieve($self, $file, $key, $opt);
 }
 
 sub _retrieve {
-	my ($file, $key, $opt) = @_;
-	my %hash;
-	tie %hash,  'DB_File', $file, O_RDWR, '0666', $DB_BTREE;
-	if (exists($hash{$key})) {
-		say $opt->{utf8} ? decode('utf-8', $hash{$key}) : $hash{$key};
+	my ($self, $file, $key, $opt) = @_;
+
+	my $hash = $self->app->do_tie( $file, $opt );
+
+	if (exists($hash->{$key})) {
+		say $opt->{utf8} ? decode('utf-8', $hash->{$key}) : $hash->{$key};
 	} else {
 		die "Key $key not found!"
 	}
-	untie %hash;
+	untie $hash;
 }
 
 1;
