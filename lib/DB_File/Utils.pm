@@ -1,8 +1,12 @@
 # ABSTRACT: Creates db_util command line for DB_File management
-
 package DB_File::Utils;
-$DB_File::Utils::VERSION = '0.001';
+$DB_File::Utils::VERSION = '0.002';
 use App::Cmd::Setup -app;
+
+sub global_opt_spec {
+  return [ 'u|utf8' => "Force UTF8 encoding/decoding on values." ];
+}
+
 
 1;
 

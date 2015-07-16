@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::keys;
-$DB_File::Utils::Command::keys::VERSION = '0.001';
+$DB_File::Utils::Command::keys::VERSION = '0.002';
 use v5.20;
 use DB_File::Utils -command;
 use strict;
@@ -28,6 +28,8 @@ sub validate_args {
 
 sub execute {
 	my ($self, $opt, $args) = @_;
+
+	$opt = { %{$self->app->global_options}, %$opt};
 
 	foreach my $file (@$args) {
 		_dump($file);

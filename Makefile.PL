@@ -22,11 +22,12 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "App::Cmd::Setup" => 0,
     "DB_File" => 0,
+    "Encode" => 0,
     "Fcntl" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => ""
   }
@@ -36,6 +37,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "App::Cmd::Setup" => 0,
   "DB_File" => 0,
+  "Encode" => 0,
   "ExtUtils::MakeMaker" => 0,
   "Fcntl" => 0,
   "strict" => 0,

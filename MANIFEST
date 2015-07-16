@@ -12,5 +12,6 @@ lib/DB_File/Utils.pm
 lib/DB_File/Utils/Command.pm
 lib/DB_File/Utils/Command/get.pm
 lib/DB_File/Utils/Command/keys.pm
+lib/DB_File/Utils/Command/put.pm
 scripts/db_util
 xt/release/cpan-changes.t

@@ -15,10 +15,11 @@ name: DB_File-Utils
 requires:
   App::Cmd::Setup: '0'
   DB_File: '0'
+  Encode: '0'
   Fcntl: '0'
   perl: v5.20.0
   strict: '0'
   warnings: '0'
 resources:
   repository: https://github.com/ambs/DB_File-Utils.git
-version: '0.001'
+version: '0.002'
