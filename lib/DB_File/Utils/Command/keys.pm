@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::keys;
-$DB_File::Utils::Command::keys::VERSION = '0.003';
+$DB_File::Utils::Command::keys::VERSION = '0.004';
 use v5.20;
 use DB_File::Utils -command;
 use strict;
@@ -38,9 +38,13 @@ sub execute {
 
 sub _dump {
 	my ($self, $filename, $opt) = @_;
-	my $hash = $self->app->do_tie( $filename, $opt);
-	say while (($_) = each %$hash);
-	untie $hash;
+	my $collection = $self->app->do_tie( $filename, $opt);
+	if (ref($collection) eq "HASH") {
+		say while (($_) = each %$collection);
+	} else {
+		say foreach grep { defined $collection->[$_] } keys @$collection;
+	}
+	untie $collection;
 }
 
 1;

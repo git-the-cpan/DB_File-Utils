@@ -20,9 +20,10 @@ requires:
   DB_File: '0'
   Encode: '0'
   Fcntl: '0'
+  File::Slurp: '0'
   perl: v5.20.0
   strict: '0'
   warnings: '0'
 resources:
   repository: https://github.com/ambs/DB_File-Utils.git
-version: '0.003'
+version: '0.004'

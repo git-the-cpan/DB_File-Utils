@@ -24,6 +24,7 @@ my %WriteMakefileArgs = (
     "DB_File" => 0,
     "Encode" => 0,
     "Fcntl" => 0,
+    "File::Slurp" => 0,
     "strict" => 0,
     "warnings" => 0
   },
@@ -32,7 +33,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.003",
+  "VERSION" => "0.004",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -46,6 +47,7 @@ my %FallbackPrereqs = (
   "Encode" => 0,
   "ExtUtils::MakeMaker" => 0,
   "Fcntl" => 0,
+  "File::Slurp" => 0,
   "File::Temp" => 0,
   "Test::More" => 0,
   "strict" => 0,
