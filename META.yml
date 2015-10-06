@@ -26,4 +26,4 @@ requires:
   warnings: '0'
 resources:
   repository: https://github.com/ambs/DB_File-Utils.git
-version: '0.005'
+version: '0.006'

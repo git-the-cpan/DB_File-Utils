@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::put;
-$DB_File::Utils::Command::put::VERSION = '0.005';
+$DB_File::Utils::Command::put::VERSION = '0.006';
 use v5.20;
 use DB_File::Utils -command;
 use strict;

@@ -1,6 +1,6 @@
 # ABSTRACT: Creates db_util command line for DB_File management
 package DB_File::Utils;
-$DB_File::Utils::VERSION = '0.005';
+$DB_File::Utils::VERSION = '0.006';
 use warnings;
 use strict;
 use DB_File;
