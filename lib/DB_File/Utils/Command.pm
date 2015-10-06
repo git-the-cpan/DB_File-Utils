@@ -1,5 +1,7 @@
 package DB_File::Utils::Command;
-$DB_File::Utils::Command::VERSION = '0.004';
+$DB_File::Utils::Command::VERSION = '0.005';
+use warnings;
+use strict;
 use App::Cmd::Setup -command;
  
 

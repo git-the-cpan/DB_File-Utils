@@ -1,5 +1,5 @@
 package DB_File::Utils::Command::get;
-$DB_File::Utils::Command::get::VERSION = '0.004';
+$DB_File::Utils::Command::get::VERSION = '0.005';
 use v5.20;
 use DB_File::Utils -command;
 use strict;
